@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from datetime import datetime
 
 app = FastAPI()
 
@@ -7,4 +8,6 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message":"Hello TutLinks.com"}
+    with open('log.txt', 'a') as f:
+        f.write(str(datetime.now()))
+    return b"Hello to Ronan's FastAPI Deployment"
