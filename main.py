@@ -10,4 +10,5 @@ app = FastAPI()
 def home():
     with open('log.txt', 'a') as f:
         f.write(str(datetime.now()))
+        f.write('\n')
     return b"Hello to Ronan's FastAPI Deployment"
